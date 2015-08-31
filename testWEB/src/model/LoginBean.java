@@ -1,30 +1,35 @@
 package model;
 
+import java.io.Serializable;
+
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import test.practicoService;
 
-@ManagedBean(name="loginBean")
+@ManagedBean
 @SessionScoped
-public class LoginBean {
+public class LoginBean implements Serializable{
 
+	private static final long serialVersionUID = 1L;
 	private String username;
     private String password;
      
 	@EJB
 	practicoService bll;
     
-    public String getUserName() {
-        return username;
-    }
+
  
-    public void setUserName(String userName) {
-        this.username = userName;
-    }
- 
-    public String getPassword() {
+    public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
         return password;
     }
  

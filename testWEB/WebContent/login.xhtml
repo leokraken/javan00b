@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<!-- <link href="https://bootswatch.com/darkly/bootstrap.css" rel="stylesheet" type="text/css"> -->
+
+	<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+	<title>Login Test</title>
+</head>
+
+<body>
+
+<f:view>
+
+<h:form styleClass="form-horizontal">
+  <fieldset>
+    <legend>Legend</legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+			<h:inputText styleClass="form-control" id="username" value="#{loginBean.username}" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <h:inputSecret id="password" value="#{loginBean.password}" />
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+<!--          <button type="button" class="btn btn-primary" action="">Login</button>  -->
+      		 <h:commandButton value="Login" action="#{loginBean.validar}"/> 
+      </div>
+    </div>
+  </fieldset>
+</h:form>
+
+</f:view>
+
+</body>
+</html>
