@@ -21,11 +21,9 @@ public class practicoService {
 		Usuario u = em.find(Usuario.class, UsuarioID);
 		return u;
 	} 
-	public boolean login(String usuario, String pass){
-		Usuario u = em.find(Usuario.class, usuario);
-		if(u!=null && u.getPassword().equals(pass))
-			return true;		
-		return false;
+	public Usuario login(String usuario){
+		return em.find(Usuario.class, usuario);
+		
 	}
 
 }

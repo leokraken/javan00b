@@ -1,46 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"      
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
-<head>
-<!-- <link href="https://bootswatch.com/darkly/bootstrap.css" rel="stylesheet" type="text/css"> -->
+<h:head>
 
 	<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
-	<title>Login Test</title>
-</head>
+	<h:outputScript library="js" name="jquery-1.11.3.js" />
+	<h:outputScript library="js" name="bootstrap.js" />
+
+	<title>Login Page</title>
+</h:head>
 
 <body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">TSI2</a>
+			</div>
 
-<f:view>
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false">Test
+							<span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Prueba 1</a></li>
+							<li><a href="#">Prueba2</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Separador</a></li>
+						</ul></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<!--         <li><a href="#">Link</a></li> -->
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-<h:form styleClass="form-horizontal">
-  <fieldset>
-    <legend>Legend</legend>
-    <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-      <div class="col-lg-10">
-			<h:inputText styleClass="form-control" id="username" value="#{loginBean.username}" />
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-      <div class="col-lg-10">
-        <h:inputSecret id="password" value="#{loginBean.password}" />
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <button type="reset" class="btn btn-default">Cancel</button>
-<!--          <button type="button" class="btn btn-primary" action="">Login</button>  -->
-      		 <h:commandButton value="Login" action="#{loginBean.validar}"/> 
-      </div>
-    </div>
-  </fieldset>
-</h:form>
 
-</f:view>
+	<f:view>
+
+		<div class="container body-content">
+
+			<div class="row">
+				<div class="col-md-8">
+
+					<h:form styleClass="form-horizontal">
+						<fieldset>
+
+							<div class="form-group">
+								<label for="inputEmail" class="col-md-2 control-label"
+									pt:placeholder="Usuario">Usuario</label>
+								<div class="col-md-10">
+									<h:inputText id="username" value="#{loginBean.username}"
+										styleClass="form-control" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPassword" class="col-md-2 control-label"
+									pt:placeholder="Contraseña">Contraseña</label>
+								<div class="col-md-10">
+									<h:inputSecret id="password" value="#{loginBean.password}"
+										styleClass="form-control" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-md-offset-2 col-md-10">
+									<h:commandButton value="Login" action="#{loginBean.validar}"
+										styleClass="btn btn-primary" />
+								</div>
+							</div>
+						</fieldset>
+
+					</h:form>
+				</div>
+
+			</div>
+
+		</div>
+
+	</f:view>
 
 </body>
 </html>
