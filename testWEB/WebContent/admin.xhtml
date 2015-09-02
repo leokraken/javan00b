@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.css"/>
+	<h:outputStylesheet library="css" name="site.css"/>
+	
+	<h:outputScript library="js" name="jquery-1.11.3.js" />
+	<h:outputScript library="js" name="bootstrap.js" />
+	<h:outputScript library="js" name="stomp.js" />
+	<h:outputScript library="js" name="adminSendMessage.js" />
+	
+	<title>User Home</title>
+</h:head>
+<h:body>
+
+<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">TSI2</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false">Test
+							<span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Prueba 1</a></li>
+							<li><a href="#">Prueba2</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Separador</a></li>
+						</ul></li>
+				</ul>
+				<div class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input id="box" class="form-control" placeholder="Mensaje" type="text" onkeypress="return enter(event)"/>
+					</div>
+					<button type="button" class="btn btn-default" onclick="sendMessage()">Send</button>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<f:view>
+
+		<div class="container body-content" style="width:50%">
+			<h3>Datos personales</h3>
+			<table class="table table-striped table-hover">
+				<thead>
+
+				</thead>
+				<tbody>
+					<tr>
+						<td>Nombre</td>
+						<td><h:outputText value="#{loginBean.usuario.nombre}" /></td>
+					</tr>
+					<tr>
+						<td>Apellido</td>
+						<td><h:outputText value="#{loginBean.usuario.apellido}" /></td>
+					</tr>
+					<tr>
+						<td>Nick</td>
+						<td><h:outputText value="#{loginBean.usuario.nick}" /></td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td><h:outputText value="#{loginBean.usuario.mail}" /></td>
+					</tr>
+					<tr>
+						<td>Contraseña</td>
+						<td><h:outputText value="#{loginBean.usuario.password}" /></td>
+
+					</tr>
+					<tr>
+						<td>Rol</td>
+						<td><h:outputText value="Admin" /></td>
+
+					</tr>
+
+				</tbody>
+			</table>
+
+<!-- 			<h3>Enviar mensaje</h3>
+
+			<div class="horizontal-form">
+				<div class="form-group">
+					<div class="col-md-5">
+						<input id="box" type="text" placeholder="Mensaje" class="form-control"/> 					
+					</div>				
+				</div>
+				
+				<div class="form-group">
+					<div class="col-md-2">
+						<input type="button" class="btn btn-primary" onclick="sendMessage()" value="send"/>
+					</div>				
+				</div>
+			</div>
+ -->
+		</div>
+
+	</f:view>
+	
+<footer>
+	<div class="container bs-docs-footer">
+		<p> Grupo 5 - Taller de Sistemas de Información II</p>
+	</div>
+</footer>
+	
+</h:body>
+
+
+</html>
