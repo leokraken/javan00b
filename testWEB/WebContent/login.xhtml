@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	>
 
 <h:head>
 
@@ -41,7 +41,7 @@
 						</ul></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<!--         <li><a href="#">Link</a></li> -->
+				
 				</ul>
 			</div>
 		</div>
@@ -59,16 +59,14 @@
 						<fieldset>
 
 							<div class="form-group">
-								<label for="inputEmail" class="col-md-2 control-label"
-									pt:placeholder="Usuario">Usuario</label>
+								<label for="inputEmail" class="col-md-2 control-label">Usuario</label>
 								<div class="col-md-10">
 									<h:inputText id="username" value="#{loginBean.username}"
 										styleClass="form-control" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputPassword" class="col-md-2 control-label"
-									pt:placeholder="Contraseña">Contraseña</label>
+								<label for="inputPassword" class="col-md-2 control-label">Contraseña</label>
 								<div class="col-md-10">
 									<h:inputSecret id="password" value="#{loginBean.password}"
 										styleClass="form-control" />
@@ -91,6 +89,9 @@
 		</div>
 
 	</f:view>
+
+
+
 
 </body>
 </html>

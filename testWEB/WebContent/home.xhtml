@@ -4,11 +4,19 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="bootstrap.css"/>
+	<h:outputStylesheet library="css" name="site.css"/>
+	<h:outputStylesheet library="css" name="flatty.css"/>
+	
 	<h:outputScript library="js" name="jquery-1.11.3.js" />
 	<h:outputScript library="js" name="bootstrap.js" />
-	<title>Login Successful</title>
+	<h:outputScript library="js" name="stomp.js" />
+	<h:outputScript library="js" name="websocket.js" />
+	<h:outputScript library="js" name="humane.js" />	
+	
+	<title>User Home</title>
 </h:head>
+
 <h:body>
 
 <nav class="navbar navbar-default">
@@ -46,14 +54,10 @@
 
 	<f:view>
 
-		<div class="container body-content">
-
+		<div class="container body-content" style="width:50%">
+			<h3>Datos Personales</h3>
 			<table class="table table-striped table-hover ">
 				<thead>
-					<tr>
-						<th>Atributo</th>
-						<th>Valor</th>
-					</tr>
 				</thead>
 				<tbody>
 					<tr>
@@ -77,13 +81,19 @@
 						<td><h:outputText value="#{loginBean.usuario.password}" /></td>
 
 					</tr>
+					<tr>
+						<td>Rol</td>
+						<td><h:outputText value="Usuario" /></td>
 
+					</tr>
 				</tbody>
 			</table>
-
-
+			
+			<!-- BROADCAST 
+			<h3>Mensajes</h3>
+			<div id="chat" style="width:75%"></div>
+			-->
 		</div>
-
 	</f:view>
 </h:body>
 </html>

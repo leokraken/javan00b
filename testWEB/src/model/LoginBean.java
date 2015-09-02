@@ -5,9 +5,8 @@ import java.io.Serializable;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
+import test.practicoEJB;
 import entities.Usuario;
-import test.practicoService;
 
 
 @ManagedBean
@@ -20,8 +19,9 @@ public class LoginBean implements Serializable{
     private Usuario usuario;
     
 	@EJB
-	practicoService bll;
+	private practicoEJB bll;
     
+	
     public String getUsername() {
 		return username;
 	}
@@ -51,8 +51,11 @@ public class LoginBean implements Serializable{
 	public String validar()
     {
     	usuario = bll.login(username);
-    	if(usuario!=null && usuario.getPassword().equals(password))
+    	if(usuario!=null && usuario.getPassword().equals(password)){
+    		if(usuario.getRol())
+    			return "admin";
     		return "home";
+    	}
     	else
     		return "failure";
     }

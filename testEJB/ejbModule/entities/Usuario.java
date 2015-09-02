@@ -25,6 +25,8 @@ public class Usuario implements Serializable {
 
 	private String password;
 
+	private Boolean rol;
+
 	public Usuario() {
 	}
 
@@ -66,6 +68,14 @@ public class Usuario implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Boolean getRol() {
+		return this.rol;
+	}
+
+	public void setRol(Boolean rol) {
+		this.rol = rol;
 	}
 
 }
