@@ -31,7 +31,7 @@ function wssoap(){
         data: body,
         success: function (xmlResponse) {
             console.log(xmlResponse);
-            console.log(xmlResponse.responseText);
+            console.log(xmlResponse.responseText); 
         },
         error: function () {
         	alert('error');
