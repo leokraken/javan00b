@@ -1,5 +1,6 @@
 package ws;
 
+import javax.ejb.EJB;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
@@ -9,6 +10,7 @@ import entities.Usuario;
 @WebService
 public class loginWS {
 
+	@EJB
 	practicoEJB bll;
 	
 	public loginWS() {
